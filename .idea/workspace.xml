@@ -26,6 +26,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="extract.method.default.visibility" value="private" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -60,7 +61,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1600714200187</updated>
-      <workItem from="1600714201235" duration="8047000" />
+      <workItem from="1600714201235" duration="9468000" />
     </task>
     <servers />
   </component>
@@ -76,21 +77,25 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="461" y="31" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog/0.0.1280.680@0.0.1280.680" timestamp="1600723487756" />
-    <state width="1237" height="108" key="GridCell.Tab.0.bottom" timestamp="1600725865895">
+    <state width="1237" height="108" key="GridCell.Tab.0.bottom" timestamp="1600726732251">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="108" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1600725865895" />
-    <state width="1237" height="108" key="GridCell.Tab.0.center" timestamp="1600725865894">
+    <state width="1237" height="108" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1600726732251" />
+    <state width="1237" height="108" key="GridCell.Tab.0.center" timestamp="1600726732250">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="108" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1600725865894" />
-    <state width="1237" height="108" key="GridCell.Tab.0.left" timestamp="1600725865894">
+    <state width="1237" height="108" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1600726732250" />
+    <state width="1237" height="108" key="GridCell.Tab.0.left" timestamp="1600726732250">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="108" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1600725865894" />
-    <state width="1237" height="108" key="GridCell.Tab.0.right" timestamp="1600725865894">
+    <state width="1237" height="108" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1600726732250" />
+    <state width="1237" height="108" key="GridCell.Tab.0.right" timestamp="1600726732251">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="108" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1600725865894" />
+    <state width="1237" height="108" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1600726732251" />
+    <state x="371" y="101" key="extract.method.dialog" timestamp="1600727331786">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="371" y="101" key="extract.method.dialog/0.0.1280.680@0.0.1280.680" timestamp="1600727331786" />
   </component>
 </project>

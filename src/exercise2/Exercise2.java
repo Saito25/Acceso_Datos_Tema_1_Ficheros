@@ -2,6 +2,7 @@ package exercise2;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Objects;
 
 /*
     Realiza un programa que cree un directorio en el directorio actual, luego
@@ -37,14 +38,48 @@ public class Exercise2 {
                 try {
                     files[i].createNewFile();
                 } catch (IOException e) {
-                    e.printStackTrace();
+                    System.err.println("No se ha podido crear el fichero.");
                 }
+            }
 
+            // Eliminar archivo
+            files[0].delete();
+
+            // Renombrar fichero.
+            files[1].renameTo(new File(subcurrentFile, "renameNewFile.txt"));
+
+        } else {
+            System.err.println("El directorio especificado no se puede crear.");
+        }
+
+        // Creamos directorio dentro del nuevo directorio dentro de nuestra carpeta actual
+        if(subSubCurrentFile.mkdir()) {
+            try {
+                new File(subSubCurrentFile, "newSubSubCurrentDirectory.txt").createNewFile();
+            } catch (IOException e) {
+                System.err.println("No se ha podido crear el fichero.");
             }
 
         } else {
-            System.out.println("El directorio especificado no se puede crear.");
+            System.err.println("No se ha podido crear el directorio.");
         }
 
+        /*
+            Recorrer directorios y mostrar archivos.
+         */
+        showFilesName(subcurrentFile);
+        showFilesName(subSubCurrentFile);
+
+
+    }
+
+    private void showFilesName(File subcurrentFile) {
+        try {
+            for(String elementName : Objects.requireNonNull(subcurrentFile.list())) {
+                System.out.println(elementName);
+            }
+        } catch (NullPointerException e) {
+            System.err.println("No hay ficheros en el directorio");
+        }
     }
 }
