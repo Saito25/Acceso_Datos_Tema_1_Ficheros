@@ -7,6 +7,13 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -20,6 +27,31 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
   </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Acceso_Datos_Tema_1_Ficheros" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -28,11 +60,37 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1600714200187</updated>
-      <workItem from="1600714201235" duration="1012000" />
+      <workItem from="1600714201235" duration="6997000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="446" y="41" key="#com.intellij.ide.util.MemberChooser" timestamp="1600719166850">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="446" y="41" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1600719166850" />
+    <state x="461" y="31" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog" timestamp="1600723487756">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="461" y="31" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog/0.0.1280.680@0.0.1280.680" timestamp="1600723487756" />
+    <state width="1237" height="108" key="GridCell.Tab.0.bottom" timestamp="1600724115652">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="108" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1600724115652" />
+    <state width="1237" height="108" key="GridCell.Tab.0.center" timestamp="1600724115652">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="108" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1600724115652" />
+    <state width="1237" height="108" key="GridCell.Tab.0.left" timestamp="1600724115652">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="108" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1600724115652" />
+    <state width="1237" height="108" key="GridCell.Tab.0.right" timestamp="1600724115652">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="108" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1600724115652" />
   </component>
 </project>
