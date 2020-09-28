@@ -17,7 +17,7 @@ public class Exercise2 {
         /*
             Inicializar datos: directorios, variables.
          */
-        String currentDirectory = ".\\src\\exercise2";
+        String currentDirectory = "src\\exercise2";
         String subCurrentDirectory = currentDirectory + "\\newDirectory";
         String subSubCurrentDirectory = subCurrentDirectory + "\\subNewDirectory";
 
@@ -74,11 +74,13 @@ public class Exercise2 {
     }
 
     private void showFilesName(File subcurrentFile) {
-        try {
-            for(String elementName : Objects.requireNonNull(subcurrentFile.list())) {
+
+        // Cambiar por fori.
+        if(subcurrentFile.exists() && subcurrentFile.isDirectory()) {
+            for(String elementName : subcurrentFile.list()) {
                 System.out.println(elementName);
             }
-        } catch (NullPointerException e) {
+        } else  {
             System.err.println("No hay ficheros en el directorio");
         }
     }
