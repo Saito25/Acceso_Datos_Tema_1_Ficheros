@@ -1,10 +1,8 @@
-package exercise9Perfomenced.randomFileGenerator.utils;
+package exercise9.randomFileGenerator.utils;
 
-import exercise9Perfomenced.randomFileGenerator.RandomFileOperator;
+import exercise9.randomFileGenerator.AgendaFileInitializer;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.RandomAccessFile;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -17,13 +15,11 @@ import java.util.Scanner;
  */
 public class RandomFileMenu {
 
-    private final RandomFileOperator randomFileOperator;
     private final Scanner keyboard = new Scanner(System.in);
 
     // Constructor simple
-    public RandomFileMenu(RandomFileOperator randomFileOperator) throws IOException {
-        this.randomFileOperator = randomFileOperator;
-
+    public RandomFileMenu() throws IOException {
+        AgendaFileInitializer.isFileInitialized();
         showOptions();
     }
 
@@ -52,7 +48,7 @@ public class RandomFileMenu {
     private void makeElection() throws IOException {
         int election;
 
-        election = testElection();
+        election = testElection(1, 8);
 
        executeOption(election);
     }
@@ -68,6 +64,7 @@ public class RandomFileMenu {
                 showAllRegistries();
                 break;
             case 2:
+                showRegistryByID();
                 break;
             case 3:
                 break;
@@ -85,14 +82,24 @@ public class RandomFileMenu {
         }
     }
 
+    private void showRegistryByID() throws IOException {
+        int election;
+
+        System.out.println("Introduce un ID:");
+
+        election = testElection(1, 100);
+
+        AgendaFileInitializer.showRegistryById(election);
+    }
+
     private void showAllRegistries() throws IOException {
-        randomFileOperator.showAllRegistries();
+        AgendaFileInitializer.showAllRegistries();
     }
 
     /*
         Comprueba que la elección introducida es válida
      */
-    private int testElection() {
+    private int testElection(int min, int max) {
         int election = 0;
         boolean isNotCorrectElection = true;
 
@@ -105,7 +112,7 @@ public class RandomFileMenu {
                 System.out.println("Introduce un número, por favor");
             }
 
-            if(election < 9 && election > 0) {
+            if(election <= max && election >= min) {
                 isNotCorrectElection = false;
             } else {
                 System.out.println("La opción introducida no es válida");

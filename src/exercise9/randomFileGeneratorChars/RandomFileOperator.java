@@ -1,6 +1,4 @@
-package exercise9Perfomenced.randomFileGenerator;
-
-import exercise9Perfomenced.randomFileGenerator.utils.RandomFileMenu;
+package exercise9.randomFileGenerator;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -37,7 +35,7 @@ public class RandomFileOperator {
         currentMaxId = howToCreate;
         this.writeInUTF = writeInUTF;
 
-        new RandomFileMenu(this);
+
     }
 
     /**
@@ -62,11 +60,10 @@ public class RandomFileOperator {
      */
     private void showAllRegistriesInUTFMode(RandomAccessFile randomAccessFile) throws IOException {
         // Calculo lectura:
-        // 1 + 4 + 20 + 30 + 20 + 1 + 4 + 40 + 4 + 18: 142
+        // 1 + 4 + 20 + 30 + 20 + 1 + 4 + 40 + 4 + 18: 98
         long pointerPosition = 0;
 
         while (true) {
-            randomAccessFile.seek(pointerPosition);
             if (!randomAccessFile.readBoolean()) {
                 System.out.printf("%d, %s, %s, %s, %b, %d, %s, %d, %s\n",
                         randomAccessFile.readInt(),
@@ -78,13 +75,11 @@ public class RandomFileOperator {
                         randomAccessFile.readUTF(),
                         randomAccessFile.readInt(),
                         randomAccessFile.readUTF());
-                System.out.println();
                 System.out.println(randomAccessFile.getFilePointer());
-                System.out.println(randomAccessFile.length());
             } else {
                 randomAccessFile.readInt();
                 randomAccessFile.readUTF();
-                randomAccessFile.readInt();
+                randomAccessFile.readUTF();
                 randomAccessFile.readUTF();
                 randomAccessFile.readBoolean();
                 randomAccessFile.readInt();
@@ -92,13 +87,10 @@ public class RandomFileOperator {
                 randomAccessFile.readInt();
                 randomAccessFile.readUTF();
             }
-            if (randomAccessFile.getFilePointer() == randomAccessFile.length() - 1) {
+            if (randomAccessFile.getFilePointer() == randomAccessFile.length()) {
                 System.out.printf("Fichero leído");
                 break;
-            } else {
-                pointerPosition = randomAccessFile.getFilePointer();
             }
-
         }
     }
 

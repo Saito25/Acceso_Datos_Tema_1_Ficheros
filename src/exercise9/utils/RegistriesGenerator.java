@@ -1,4 +1,4 @@
-package exercise9Perfomenced.utils;
+package exercise9.utils;
 
 import java.util.Random;
 
@@ -63,28 +63,30 @@ public final class RegistriesGenerator {
         int month = dataRandomGenerator.nextInt(12) + 1;
         int year = dataRandomGenerator.nextInt(31) + 1970;
 
-        return String.format("%d/%d/%d", day, month, year);
+        return String.format("%02d/%02d/%d", day, month, year);
     }
 
     /*
         Genera una dirección añadiendo el índice de su creción
      */
     private static String adrressGenerator(int index) {
-        return "St: somewhere nº " + index;
+        return "St: somewhere nº " + dataRandomGenerator.nextInt(100) + 1;
     }
 
     /*
         Genera el apellido de la persona añadiendo el índice de su creación
      */
     private static String lastNameGenerator(int index) {
-        return "last Name " + index;
+
+        return "last Name " + dataRandomGenerator.nextInt(100) + 1;
     }
 
     /*
         Genera el nombre de la persona, añadiendo el índice de su creación
      */
     private static String nameGenerator(int index) {
-        return "Named " + index;
+
+        return "Named " + dataRandomGenerator.nextInt(100) + 1;
     }
 
     /*

@@ -1,4 +1,4 @@
-package exercise9Perfomenced.utils;
+package exercise9.utils;
 
 import java.io.Serializable;
 
@@ -66,70 +66,39 @@ public class Registry implements Serializable {
     }
 
     /*
-        Getters y Setter de la clase.
+        Getters de la clase.
      */
 
     public int getPostalCode() {
         return postalCode;
     }
 
-    public void setPostalCode(int postalCode) {
-        this.postalCode = postalCode;
-    }
-
     public int getOwedMoney() {
         return owedMoney;
-    }
-
-    public void setOwedMoney(int owedMoney) {
-        this.owedMoney = owedMoney;
     }
 
     public boolean isDebtor() {
         return isDebtor;
     }
 
-    public void setDebtor(boolean debtor) {
-        isDebtor = debtor;
-    }
-
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getLastName() {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
     public String getAddress() {
         return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
     }
 
     public String getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(String birthDate) {
-        this.birthDate = birthDate;
-    }
-
     public String getTelephone() {
         return telephone;
     }
 
-    public void setTelephone(String telephone) {
-        this.telephone = telephone;
-    }
 }

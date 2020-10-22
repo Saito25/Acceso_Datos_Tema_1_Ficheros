@@ -1,7 +1,7 @@
-package exercise9Perfomenced.randomFileGenerator;
+package exercise9.randomFileGenerator;
 
-import exercise9Perfomenced.utils.OldAgendaReader;
-import exercise9Perfomenced.utils.Registry;
+import exercise9.utils.OldAgendaReader;
+import exercise9.utils.Registry;
 
 import java.io.File;
 import java.io.IOException;
@@ -79,7 +79,6 @@ public final class RandomFileBilder {
 
         printRegistriesInFile(isActive, ids, names, lastNames, birthDates,
                 isDebtors, owedMoney, addresses, postalCode, telephones, writeInUTF);
-
     }
 
     private static void printRegistriesInFile(boolean[] isActive, int[] ids,
@@ -89,8 +88,12 @@ public final class RandomFileBilder {
             throws IOException {
 
         RandomAccessFile randomAgendaFile = new RandomAccessFile(randomFilePath, "rw");
+        int pointerPostition = 0;
+        int lengthRegistry = 110;
 
         for(int i = 0; i < isActive.length; i++) {
+            randomAgendaFile.seek(pointerPostition);
+
             randomAgendaFile.writeBoolean(isActive[i]);
             randomAgendaFile.writeInt(ids[i]);
             isActiveUTF(names[i], writeInUTF, randomAgendaFile);
@@ -101,6 +104,8 @@ public final class RandomFileBilder {
             isActiveUTF(addresses[i], writeInUTF, randomAgendaFile);
             randomAgendaFile.writeInt(postalCode[i]);
             isActiveUTF(telephones[i], writeInUTF, randomAgendaFile);
+
+            pointerPostition += lengthRegistry;
         }
         randomAgendaFile.close();
     }
@@ -114,8 +119,7 @@ public final class RandomFileBilder {
     }
 
     private static String stringLengthFormatter(String stringToFormat, int stringLength) {
-        StringBuffer formatedString = new StringBuffer();
-        formatedString.append(stringToFormat);
+        StringBuffer formatedString = new StringBuffer(stringToFormat);
         formatedString.setLength(stringLength);
         return formatedString.toString();
     }
