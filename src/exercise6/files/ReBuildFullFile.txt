@@ -1,7 +1,1 @@
-Realiza un programa que dado un fichero de texto, se copie en tres ficherosdiferentes de tal  manera que copie en el
-primer fichero los primeros 5 caracteres, en el segundo, los 5 siguientes y  en el tercero los 5 siguientes, y así
-sucesivamente hastacopiar todo el fichero. Utilizar lectura sin  desplazamiento y escrituras condesplazamiento.
-Después, hacer justamente lo contrario. Dados los 3 ficheros, construiruno como el fichero original. Utilizar
-ahora lecturas con desplazamiento y  escritura sindesplazamiento. Comprobar por código que ambos son iguales.
-En el caso de la últimalectura/escritura, si no se llena el buffer, utilizar el desplazamiento para no dejar
-basura
+0123456789abcd

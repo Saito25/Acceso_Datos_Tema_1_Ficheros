@@ -14,24 +14,24 @@ import java.util.Arrays;
     Utilizar Stream de la clase BufferedReader.
 
     • Si el destino es un archivo, habrá varias opciones según un booleano:
-        ➢ Si el booleano es verdadero y el destino es un archivo existente, sereemplazará su
+        ➢ Si el booleano es verdadero y el destino es un archivo existente, se reemplazará su
         contenido por el del archivo origen copiando carácter acarácter.
 
         ➢ Si el booleano es verdadero y el destino es un archivo inexistente, selanzará una  excepción.
 
-        ➢ Si el booleano es falso y el destino es un archivo existente, sereemplazará su  contenido
-        por el del archivo origen copiándolo usandoun buffer(array) sindesplazamiento de 20 caracteres.
-        En el caso de la última escritura, si nose llena el  buffer, utilizar el desplazamiento para no
+        ➢ Si el booleano es falso y el destino es un archivo existente, se reemplazará su  contenido
+        por el del archivo origen copiándolo usandoun buffer(array) sin desplazamiento de 20 caracteres.
+        En el caso de la última escritura, si no se llena el  buffer, utilizar el desplazamiento para no
         dejar basura.
 
-        ➢ Si el booleano es falso y el destino es un archivo inexistente, no se haránada con el  archivo
+        ➢ Si el booleano es falso y el destino es un archivo inexistente, no se hará nada con el  archivo
         y se le dará un mensaje al usuario de que la copia no sepuede realizar.
  */
 public class Exercise5 {
 
     public Exercise5() throws IOException {
         int i;
-        boolean fileCondition = false;
+        boolean fileCondition = true;
 
         File writeFile;
         File readFile;
@@ -90,19 +90,12 @@ public class Exercise5 {
 
                     char[] c = new char[20];
 
-
-
                     while ((i = fileReader.read(c)) != -1) {
                         if(i == c.length) {
                             fileWriter.write(c);
-                            System.out.println("Iteración con tamaño: " +  i);
-                            System.out.println(c);
                         } else {
                             fileWriter.write(c, 0, i);
                         }
-
-
-
                     }
 
                     fileReader.close();
@@ -150,9 +143,5 @@ public class Exercise5 {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
     }
-
-
 }

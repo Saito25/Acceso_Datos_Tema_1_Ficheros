@@ -18,7 +18,10 @@ public class Exercise6 {
         // Creamos las variables.
         int i;
         int selector = 0;
-        char[] c = new char[5];
+        int index = 0;
+        int tempo = 0;
+        char[] c = new char[15];
+        final int DESPLAZAMIENTO = c.length / 3;
         boolean condition1 = true;
         boolean condition2 = true;
         boolean condition3 = true;
@@ -27,7 +30,7 @@ public class Exercise6 {
         /*
         Creación de ficheros.
          */
-        try (FileReader mainReader = new FileReader("src\\exercise6\\files\\FullFile.txt");
+        try (FileReader mainReader  = new FileReader("src\\exercise6\\files\\FullFile.txt");
              FileWriter firstWriter = new FileWriter("src\\exercise6\\files\\FirstFile.txt");
              FileWriter secondWriter = new FileWriter("src\\exercise6\\files\\SecondFile.txt");
              FileWriter thirdWriter = new FileWriter("src\\exercise6\\files\\ThirdFile.txt")) {
@@ -46,16 +49,28 @@ public class Exercise6 {
                 // asignamos a i el valor devuelto por el método read y comprobamos
                 // si es diferente a -1.
 
-                if (i == c.length) {
-                    writers[selector++].write(c);
-                } else {
-                    writers[selector++].write(c, 0, i);
+                tempo = i;
+
+                while(selector < writers.length) {
+                    if (i == c.length) {
+                        writers[selector++].write(c, index, DESPLAZAMIENTO);
+                        index += DESPLAZAMIENTO;
+                    } else {
+                        if(tempo > DESPLAZAMIENTO) {
+                            writers[selector++].write(c, index, DESPLAZAMIENTO);
+                            index += DESPLAZAMIENTO;
+                        } else {
+                            writers[selector++].write(c, index, tempo);
+                            break;
+                        }
+                        tempo -= DESPLAZAMIENTO;
+                    }
                 }
 
+                index = 0;
+
                 // Reseteamos el contador para que no se salga del array.
-                if (selector == writers.length) {
-                    selector = 0;
-                }
+                selector = 0;
             }
 
             /*
@@ -66,6 +81,7 @@ public class Exercise6 {
         }
 
         // RESET \\
+        tempo = 0;
         i = 0;
         selector = 0;
 
@@ -81,23 +97,30 @@ public class Exercise6 {
              */
             while (condition1 || condition2 || condition3) {
 
-                if (condition1 && (i = firstReader.read(c)) != -1) {
-                    writeInFile(mainWriter, i, c);
+                if (condition1 && (i = firstReader.read(c, index, DESPLAZAMIENTO)) != -1) {
+                    index += i;
+                    tempo = index;
                 } else {
                     condition1 = false;
                 }
 
-                if (condition2 && (i = secondReader.read(c)) != -1) {
-                    writeInFile(mainWriter, i, c);
+                if (condition2 && (i = secondReader.read(c, index, DESPLAZAMIENTO)) != -1) {
+                    index += i;
+                    tempo = index;
                 } else {
                     condition2 = false;
                 }
 
-                if (condition3 && (i = thirdReader.read(c)) != -1) {
-                    writeInFile(mainWriter, i, c);
+                if (condition3 && (i = thirdReader.read(c, index, DESPLAZAMIENTO)) != -1) {
+                    index += i;
+                    tempo = index;
                 } else {
                     condition3 = false;
                 }
+
+                writeInFile(mainWriter, tempo, c);
+                index = 0;
+                tempo = 0;
             }
 
         } catch (IOException e) {
@@ -105,11 +128,11 @@ public class Exercise6 {
         }
     }
 
-    private void writeInFile(FileWriter writer, int i, char[] c) throws IOException {
-        if (i == c.length) {
+    private void writeInFile(FileWriter writer, int howRead, char[] c) throws IOException {
+        if (howRead == c.length) {
             writer.write(c);
         } else {
-            writer.write(c, 0, i);
+            writer.write(c, 0, howRead);
         }
     }
 
